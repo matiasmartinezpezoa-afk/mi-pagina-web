@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mairi Seosidh — Catálogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FCFBF6; --card:#FFFFFF; --accent:#6B8E4A; --muted:#7A7A7A; --glass: rgba(255,255,255,0.7);
+      --shadow: 0 6px 18px rgba(16,24,32,0.08);
+      --gold: #C6A55F;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Crimson Pro'; margin:0; background:linear-gradient(180deg,var(--bg),#F7F7F5); color:#222}
+    header{display:flex;align-items:center;justify-content:space-between;padding:28px 4%;}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#E6F0E1,#F4F8F3);box-shadow:var(--shadow)}
+    .logo h1{margin:0;font-family:'Crimson Pro';font-size:18px;color:var(--accent)}
+    .brand h2{margin:0;font-family:'Crimson Pro';letter-spacing:1px;font-weight:700}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:0 6px 12px rgba(107,142,74,0.18)}
+    .insta{display:flex;gap:8px;align-items:center;color:var(--accent);text-decoration:none;font-weight:600}
+
+    main{padding:20px 4% 80px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:center;margin-bottom:28px}
+    .hero-card{background:var(--card);padding:26px;border-radius:14px;box-shadow:var(--shadow)}
+    .hero-card h3{margin:0 0 8px}
+    .hero-card p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+    .product{background:var(--card);border-radius:14px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+    .product img{width:100%;height:220px;object-fit:cover;border-radius:10px;background:#eee}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .meta h4{margin:0}
+    .price{font-weight:700;color:var(--accent)}
+    .desc{font-size:13px;color:var(--muted);min-height:46px}
+    .controls{display:flex;gap:8px;align-items:center}
+    .qty{width:56px;padding:6px;border-radius:8px;border:1px solid #eee;text-align:center}
+    .add{background:linear-gradient(90deg,var(--accent),var(--gold));color:white;padding:8px 10px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+
+    .cart{position:fixed;right:20px;bottom:20px;width:340px;background:var(--card);border-radius:12px;padding:12px;box-shadow:0 12px 30px rgba(16,24,32,0.12)}
+    .cart h4{margin:0 0 8px}
+    .cart-list{max-height:260px;overflow:auto;display:flex;flex-direction:column;gap:8px;padding-right:6px}
+    .cart-item{display:flex;gap:10px;align-items:center}
+    .cart-item img{width:48px;height:48px;border-radius:8px;object-fit:cover}
+    .cart-item .info{font-size:13px}
+    .cart-total{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .checkout{background:var(--accent);color:white;padding:10px;border-radius:10px;border:none;width:100%;font-weight:700;cursor:pointer;margin-top:10px}
+
+    footer{padding:24px 4%;display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #eee;margin-top:40px}
+    .socials{display:flex;gap:12px}
+    small{color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.cart{right:8px;left:8px;width:auto}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><h1>Mairi seosidh</h1></div>
+      <div>
+        <h2>Mairi Seosidh</h2>
+        <p>Artesanías únicas · María José</p>
+      </div>
+    </div>
+    <nav>
+      <a class="insta" href="https://instagram.com/mairi.seosaidh" target="_blank">@mairi.seosaidh</a>
+      <a class="btn" id="open-whatsapp">Pedir por WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h3>Catálogo — Colección: Naturaleza & Energía</h3>
+        <p>Piezas hechas a mano por María José. Materiales naturales, resina y piedras seleccionadas. Cada pieza es única, envios por blue express.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--muted);">Haz clic en "Agregar" para añadir al carrito. Al finalizar, se abrirá WhatsApp con tu pedido listo para enviar a María José.</p>
+      </div>
+      <aside class="hero-card">
+        <h4>Detalles</h4>
+        <p class="desc">Teléfono / WhatsApp: <strong>+56 9 3518 7072</strong></p>
+        <p class="desc">Instagram: <a href="https://instagram.com/mairi.seosaidh" target="_blank">@mairi.seosaidh</a></p>
+      </aside>
+    </section>
+
+    <section>
+      <div class="grid" id="products-grid">
+        <!-- Productos generados por JS -->
+      </div>
+    </section>
+  </main>
+
+  <div class="cart" id="cart">
+    <h4>Carrito</h4>
+    <div class="cart-list" id="cart-list">
+      <div style="font-size:13px;color:var(--muted)">Tu carrito está vacío</div>
+    </div>
+    <div class="cart-total">
+      <div>Total</div>
+      <div id="cart-total">$0</div>
+    </div>
+    <button class="checkout" id="checkout">Pagar por WhatsApp</button>
+  </div>
+
+  <footer>
+    <div>
+      <strong>Mairi Seosidh</strong>
+      <div style="font-size:13px;color:var(--muted)">Piezas artesanales · Hechas a mano</div>
+    </div>
+    <div class="socials">
+      <a class="insta" href="https://instagram.com/mairi.seosaiddh" target="_blank">Instagram</a>
+      <small>&copy; 2025</small>
+    </div>
+  </footer>
+
+  <script>
+    /* ====== CONFIG - Cambia estos datos según necesites ====== */
+    const CONFIG = {
+      shopName: 'Mairi Seosidh',
+      ownerName: 'María José',
+      instagram: 'mairi.seosaidh',
+      whatsappNumber: '56935187072' // formato internacional sin +
+    }
+
+    /* ====== Productos - coloca aquí las URLs de tus fotos y ajusta stock ====== */
+    const products = [
+      {id:1, title:'Collar resina — botón de rosas', price:4500, stock:3, img:'botonderosa.png', desc:'Collar de resina con botón de rosas. Piezas únicas, hechas a mano.'},
+      {id:2, title:'Aros resina — gatito', price:5000, stock:3, img:'arosgatito.png', desc:'Aros de resina, livianos y delicados.'},
+      {id:3, title:'Aros resina — flor de fresia', price:5000, stock:3, img:'flordefresia.png', desc:'Aros con resina y flor de fresia.'},
+      {id:4, title:'Collar resina — corazón con flores', price:5000, stock:3, img:'corazonconflores.png', desc:'Corazón en resina con flores preservadas.'},
+      {id:5, title:'Collar resina — flor con musgo del bosque', price:8000, stock:2, img:'florconmusgo.png', desc:'Resina con musgo natural, look forestal.'},
+      {id:6, title:'Collar resina — helecho y turmalina negra', price:7000, stock:2, img:'helecho.png', desc:'Helecho preservado y turmalina para protección.'},
+      {id:7, title:'Collar macramé — sodalita (Luz, paz, limpieza)', price:6000, stock:3, img:'piedrasodalita.png', desc:'Propiedades: limpia y purifica la energía propia y del ambiente. Disuelve bloqueos emocionales y mentales. Aporta calma profunda, paz y claridad en momentos de agitación. Ayuda a soltar cargas emocionales y pensamientos negativos.'},
+      {id:8, title:'Collar macramé — cianita (Comunicación)', price:8000, stock:3, img:'piedracianita.png', desc:'Propiedades: ayuda a alinear los chakras, especialmente el tercer ojo y la garganta. Facilita la comunicación clara, la verdad y la expresión sincera. Filtra energía negativa y bloqueos; favorece estados profundos de meditación.'},
+      {id:9, title:'Aros mostacillas — tejido aros de mariposa', price:10000, stock:3, img:'arosmariposa.png', desc:'Aros tejido de mostacillas con ganchos decorativos.'},
+      {id:10, title:'Collar mostacilla — honguito amanita', price:5000, stock:3, img:'hongito.png', desc:'Pequeño colgante honguito estilo amanita.'},
+      {id:11, title:'Collar macramé — perehnita', price:10000, stock:3, img:'prehnita.png', desc:'Propiedades: calma la mente, facilita la conexión con la naturaleza y mejora la intuición.'},
+      {id:12, title:'Collar macramé — labradorita', price:10000, stock:3, img:'labradorita.png', desc:'Propiedades: estimula la intuición y la clarividencia; equilibra cuerpo y mente; escudo protector.'},
+      {id:13, title:'Collar macramé — cuarzo rosa', price:10000, stock:3, img:'cuarzorosa.png', desc:'Propiedades: calma el estrés, promueve la paz interior y el amor propio; favorece la autoestima.'},
+      {id:14, title:'Collar macramé — lapis lazuli', price:10000, stock:3, img:'lapislazuli.png', desc:'Propiedades: ayuda a mejorar la comunicación, aleja pensamientos negativos y aporta tranquilidad.'},
+      {id:15, title:'Collar macramé — ojo de tigre', price:10000, stock:3, img:'ojodetigre.png', desc:'Propiedades: brinda fuerza y coraje, atrae riquezas y suerte, protección contra energías negativas.'}
+    ];
+
+    /* ====== Lógica de tienda (no hay pasarela real; checkout abre WhatsApp) ====== */
+    const formatCLP = n => '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+
+    const cart = [];
+
+    function renderProducts(){
+      const grid = document.getElementById('products-grid');
+      grid.innerHTML = '';
+      products.forEach(p=>{
+        const div = document.createElement('div'); div.className='product';
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/600x400?text=Sube+tu+foto'" />
+          <div class="meta"><h4>${p.title}</h4><div class="price">${formatCLP(p.price)}</div></div>
+          <div class="desc">${p.desc}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="controls">
+              <input class="qty" type="number" min="1" value="1" id="qty-${p.id}" />
+              <div style="font-size:13px;color:var(--muted)">Stock: <strong id="stock-${p.id}">${p.stock}</strong></div>
+            </div>
+            <button class="add" onclick="addToCart(${p.id})">Agregar</button>
+          </div>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
+    function addToCart(id){
+      const product = products.find(x=>x.id===id);
+      const qtyInput = document.getElementById('qty-'+id);
+      let qty = parseInt(qtyInput.value)||1;
+      if(qty<1) qty=1;
+      if(qty>product.stock){ alert('No hay suficiente stock.'); return }
+
+      const existing = cart.find(i=>i.id===id);
+      if(existing){
+        if(existing.qty + qty > product.stock){ alert('Excede el stock disponible.'); return }
+        existing.qty += qty;
+      } else {
+        cart.push({id:product.id, title:product.title, price:product.price, qty});
+      }
+      renderCart();
+      notify(`${qty} × ${product.title} agregado al carrito.`)
+    }
+
+    function renderCart(){
+      const list = document.getElementById('cart-list');
+      const totalEl = document.getElementById('cart-total');
+      list.innerHTML = '';
+      if(cart.length===0){ list.innerHTML = '<div style="font-size:13px;color:var(--muted)">Tu carrito está vacío</div>'; totalEl.textContent='$0'; return }
+      let total=0;
+      cart.forEach(item=>{
+        total += item.price * item.qty;
+        const p = products.find(x=>x.id===item.id);
+        const el = document.createElement('div'); el.className='cart-item';
+        el.innerHTML = `<img src="${p.img}" onerror="this.src='https://via.placeholder.com/60'"/> <div class="info"><strong>${item.title}</strong><div style="font-size:13px;color:var(--muted)">${item.qty} × ${formatCLP(item.price)}</div></div> <div style="margin-left:auto;text-align:right"><div style="font-weight:700">${formatCLP(item.price*item.qty)}</div><button style="background:none;border:none;color:#c33;cursor:pointer;font-size:13px" onclick="removeItem(${item.id})">Eliminar</button></div>`;
+        list.appendChild(el);
+      });
+      totalEl.textContent = formatCLP(total);
+    }
+
+    function removeItem(id){
+      const idx = cart.findIndex(x=>x.id===id);
+      if(idx>-1){ cart.splice(idx,1); renderCart(); }
+    }
+
+    function checkoutWhatsApp(){
+      if(cart.length===0){ alert('El carrito está vacío. Agrega productos antes de pagar.'); return }
+      let message = `Hola ${CONFIG.ownerName}, quiero pedir:`;
+      cart.forEach(i=>{
+        message += `\n- ${i.qty} × ${i.title} (${formatCLP(i.price)})`;
+      });
+      const total = cart.reduce((s,i)=>s + i.price*i.qty,0);
+      message += `\nTotal: ${formatCLP(total)}\n\nMi nombre: \nDirección (opcional): \nGracias!`;
+      const encoded = encodeURIComponent(message);
+      const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encoded}`;
+      window.open(url,'_blank');
+    }
+
+    function notify(msg){
+      // pequeña notificación visual (temporal)
+      const n = document.createElement('div');
+      n.textContent = msg; n.style.position='fixed'; n.style.left='50%'; n.style.transform='translateX(-50%)'; n.style.bottom='90px'; n.style.background='rgba(0,0,0,0.75)'; n.style.color='white'; n.style.padding='10px 14px'; n.style.borderRadius='10px'; n.style.zIndex=9999; document.body.appendChild(n);
+      setTimeout(()=>n.remove(),2200);
+    }
+
+    document.getElementById('checkout').addEventListener('click', checkoutWhatsApp);
+    document.getElementById('open-whatsapp').addEventListener('click', ()=>{
+      const message = encodeURIComponent(`Hola Maria ${CONFIG.ownerName}, quiero comprar un producto.`);
+      window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${message}`,'_blank');
+    })
+
+    // Inicializa
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
